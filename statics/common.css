@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.xx {
+  font-size: 20px;
+  background: url(./2.jpg) no-repeat 0 0;
+}
+
+.dd {
+  background: url(./3.jpg) no-repeat 0 0;
+}

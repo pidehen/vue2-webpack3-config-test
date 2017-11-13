@@ -41,14 +41,53 @@
 ```
 
 * 插件处理
-  1. 打包  
+  1. 打包 (UglifyJsPlugin)
   ```js
     // 注意，如果传入的参数对象包含了compress属性的话({})，那么需要显示的写上warnings: false
     new webpack.optimize.UglifyJsPlugin();  
   ```  
   疑问：warnings代表什么
-  2. 提取css
-  
+
+  2. 提取css (extract-text-webpack-plugin)
+
+  ```js
+    {
+      test: /\.css/,
+      use: ExtractTextWebpackPlugin.extract({
+        use: 'css-loader'
+      })
+    };
+
+    new ExtractTextWebpackPlugin({
+      filename: 'css/style.css'
+    });
+
+    filename的相对目录是output.path
+
+  ```  
+
+  3. 生成首页  
+
+  ```js
+    new HtmlPlugin({
+      // 生成的首页路径
+      filename: 'xx',
+      // 原首页路径
+      template: '',
+      // 是否将引用资源放到</body>前面
+      inject: true
+    });
+
+    生成的首页相对的目录是output.path
+
+  ```
+
+  4. 友好的错误提示  
+  ```js
+    new FriendlyErrorsWebpackPlugin()
+  ```
+
+
 
 ## babel
 ```json
@@ -64,13 +103,17 @@
 }
 ```
 
+## PostCSS(目前并没什么卵用)
 
 ## webpack-dev-server  
-`启动模式分两种`:  
-* iframe
-* inline
+* 启动模式分两种
+  1. iframe
+  2. inline
 
 ```text
 iframe: 保存修改内容，自动编译打包
 inline: 保存修改内容，自动编译打包，并且强制刷新浏览器
 ```
+
+* contentBase
+  默认为output.path

@@ -8,10 +8,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app';
 import routerConfig from './router';
+import '../statics/common.css';
+import bgImg from '../statics/xx.jpg';
 
 const router = new VueRouter(routerConfig);
-
-console.warn('warn');
 
 // Vue注册路由处理
 Vue.use(VueRouter);
