@@ -6,7 +6,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './app';
+import App from './App';
 import routerConfig from './router';
 import '../statics/common.css';
 import bgImg from '../statics/xx.jpg';

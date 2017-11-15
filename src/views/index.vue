@@ -1,21 +1,14 @@
 <template>
-  <div class="cd">
-    这是{{ page }} 页面
+  <div>
+    {{ message }}
   </div>
 </template>
 
-<style>
-  .cd {
-    color: red;
-  }
-</style>
-
 <script>
   export default {
-    data() {
-      return {
-        page: 'index'
-      }
-    }
+
+    data: () => ({
+      message: '册那'
+    })
   };
 </script>

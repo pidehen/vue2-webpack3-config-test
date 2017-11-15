@@ -1,17 +1,27 @@
-## vue-router
-路由配置，为vue提供路由匹配功能
+## Vue
 
-* router-link
-* router-view
+### 知识点
 
-### router-link
-类似标签，to属性代表url跳转地址
+```text
 
-### router-view
-匹配到该url的组件显示区域
+1. 动态路径参数(/users/:id)，在组件方法中可以使用this.$route.params.id获取
 
-### 处理流程
-点击router-link，vue-router实例负责在构造该该实例的参数中去匹配path，匹配成功，找到对应的组件，并且把该组件放入到router-view中
+2. 当两次渲染同一个组件时候，组件的声明周期函数(销毁、创建)不会执行
 
+3. 两次渲染同一个组件时候，调用路由变化，会调用beforeRouteUpdate，参数下一个route对象
 
-## 自带CSS Modules
+4. 命名路由
+
+5. 命名视图
+
+```
+
+### 经验
+
+* 每个vue文件都需要导出一个Vue.extend()的组件，或者是一个组件描述配置(包含组件属性性和方法的对象)
+
+* 组件的data必须是一个方法
+
+* 每个vue文件中的template里必须有一个根元素
+
+* $route里存在path就会忽略params
