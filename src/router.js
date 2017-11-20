@@ -22,7 +22,7 @@ export default {
       path: '/test',
       component: Test
     }, {
-      path: '/hs',
+      path: '/hs/:id',
       component: HS
     }, {
       path: '/users/:id',
