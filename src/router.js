@@ -4,6 +4,7 @@ import User from './views/User.vue';
 import NullUser from './views/NullUser';
 import BUser from './views/BUser';
 import N from './views/N';
+import HS from './views/HS';
 
 export default {
   routes: [
@@ -21,23 +22,37 @@ export default {
       path: '/test',
       component: Test
     }, {
+      path: '/hs',
+      component: HS
+    }, {
       path: '/users/:id',
       component: NullUser,
       children: [
         {
           path: '',
-          components: {
-            default: User,
-            n: BUser
-          }
+          name: 'user',
+          component: User
         }, {
-          path: 'x',
-          components: {
-            default: N,
-            n: BUser
-          }
+          path: 'home',
+          name: 'test',
+          component: Test
         }
       ]
+      // children: [
+      //   {
+      //     path: '',
+      //     components: {
+      //       default: User,
+      //       n: BUser
+      //     }
+      //   }, {
+      //     path: 'x',
+      //     components: {
+      //       default: N,
+      //       n: BUser
+      //     }
+      //   }
+      // ]
     }
   ]
 };
